@@ -18,6 +18,15 @@ test('should return amount', () => {
   expect(cart.items.length).toBe(1);
 })
 
+test('should delete product', () => {
+  const cart = new Cart();
+  const book1 = new Book(1, 'Капитал', 'Карл Маркс', 3000, 600);
+  const book2 = new Book(2, 'Капитал2', 'Карл Маркс', 3000, 600);
+  cart.add(book1);
+  cart.add(book2);
+  cart.deleteProduct(2);
+  expect(cart.items.length).toBe(1);
+})
 
 
 
