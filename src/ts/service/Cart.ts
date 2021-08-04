@@ -20,11 +20,7 @@ export default class Cart {
     }
 
     amountWithDiscount(discount: number): number {
-        let amount: number = 0;
-        for (const item of this._items) {
-            amount += item.price;
-        }
-        return amount * (100 - discount) / 100;
+        return this.amountWithoutDiscount() * (100 - discount) / 100;
     }
 
     deleteProduct(id: number): void {
